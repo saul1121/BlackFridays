@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">BlackFridays</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_create_order">Create Order</string>
+    <string name="title_activity_order">Order Activity</string>
+    <string name="action_share">Share</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_top">Top fragment</string>
+
+    <string-array name="ebaydeals">
+        <item>ebays deals</item>
+    </string-array>
+
+    <string-array name="bestbuy">
+        <item>bestbuy deals</item>
+    </string-array>
+
+    <string-array name="amazon">
+        <item>amazon deals</item>
+    </string-array>
+
+    <string-array name="walmart">
+        <item>walmart deals</item>
+    </string-array>
+
+
+
+    <string-array name="deals_stores">
+        <item>Home</item>
+        <item>Ebay</item>
+        <item>Amazon</item>
+        <item>BestBuy</item>
+        <item>Walmart</item>
+    </string-array>
+
+    <string name="start">Start</string>
+
+    <string name="back">Back</string>
+
+    <string name="title_activity_deal_detail">Deals</string>
+
+    <string name="welcome">Find your perfect deals</string>
+
+
+</resources>
