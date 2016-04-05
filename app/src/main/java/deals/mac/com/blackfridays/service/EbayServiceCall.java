@@ -27,7 +27,7 @@ public class EbayServiceCall implements Callback<EntityEbay>{
     final String SECURITY_APPNAME="MAC-dea-PRD-33890c490-ca2c0396";
     final String GLOBAL_ID="EBAY-US";
     final String RESPONSE_DATA_FORMAT="JSON";
-    final String callback="cb_findItemsByKeywords";
+   // final String callback="cb_findItemsByKeywords";
     final String REST_PAYLOAD = "";
     final String entriesPerPage="5";
     final String keywords="NIRVANA";
@@ -56,7 +56,7 @@ public class EbayServiceCall implements Callback<EntityEbay>{
                         SECURITY_APPNAME,
                         GLOBAL_ID,
                         RESPONSE_DATA_FORMAT,
-                        callback,
+                    //    callback,
                         REST_PAYLOAD,
                         entriesPerPage,
                         keywords);
@@ -69,7 +69,9 @@ public class EbayServiceCall implements Callback<EntityEbay>{
 
     @Override
     public void onResponse(Call<EntityEbay> call, Response<EntityEbay> response) {
+
      List<FindItemsByKeywordsResponse> allList=   response.body().getFindItemsByKeywordsResponse();
+
         if(allList!=null){
             System.out.println("size >>>>>>> "+ allList.size());
         }

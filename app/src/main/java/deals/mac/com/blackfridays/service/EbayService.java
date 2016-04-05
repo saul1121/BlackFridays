@@ -15,7 +15,7 @@ public interface EbayService {
                                  @Query("SECURITY-APPNAME") String seccurityAppName,
                                  @Query("GLOBAL-ID") String globalId,
                                  @Query("RESPONSE-DATA-FORMAT") String responseDataFormat,
-                                 @Query("callback") String callback,
+                                 //@Query("callback") String callback,
                                  @Query("REST-PAYLOAD") String restPayloadEmpty,
                                  @Query("paginationInput.entriesPerPage") String sort,
                                  @Query("keywords") String keyword
