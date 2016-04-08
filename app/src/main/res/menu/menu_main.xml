@@ -3,11 +3,23 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="deals.mac.com.blackfridays.MainActivity">
 
-
+<!--
 
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        app:showAsAction="never"
+
+        />
+-->
+
+    <item
+        android:id="@+id/menu_item_search"
+        android:title="@string/menu_search"
+        android:icon="@drawable/icon_search"
+        app:showAsAction="collapseActionView"
+        app:actionViewClass="android.widget.SearchView"
+        />
+
 </menu>

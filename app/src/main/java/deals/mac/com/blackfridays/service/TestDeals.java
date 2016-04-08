@@ -8,7 +8,9 @@ public class TestDeals  {
     public static void main(String args[]) {
 
 
-        new EbayServiceCall().callEbay();
+       // new EbayServiceCall().callEbay();//works
+
+        new EbayDeals().callEbays();
 
 
 

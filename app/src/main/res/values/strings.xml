@@ -29,7 +29,6 @@
     </string-array>
 
 
-
     <string-array name="deals_stores">
         <item>Home</item>
         <item>Ebay</item>
@@ -45,6 +44,64 @@
     <string name="title_activity_deal_detail">Deals</string>
 
     <string name="welcome">Find your perfect deals</string>
+
+    <string name="base_ebay">http://svcs.ebay.com/</string>
+    <string name="operation_name_ebay">findItemsByKeywords</string>
+    <string name="service_version_ebay">1.0.0</string>
+    <string name="security_app_name_ebay">MAC-dea-PRD-33890c490-ca2c0396</string>
+    <string name="goblal_id_ebay">EBAY-US</string>
+    <string name="reponse_data_format_ebay">JSON</string>
+    <string name="rest_payload_ebay"></string>
+    <string name="entries_per_page_ebay">20</string>
+    <string name="keywords_ebay">nirvana</string>
+    <string name="search_hint">Search Deal</string>
+    <string name="menu_search">Search</string>
+
+
+
+    <string name="operation_name">getMostWatchedItems</string>
+    <string name="service_name">MerchandisingService</string>
+    <string name="service_version">1.0.0</string>
+    <string name="consumer_id">MAC-dea-PRD-33890c490-ca2c0396</string>
+    <string name="RESPONSE_DATA_FORMAT">JSON</string>
+    <string name="REST_PAYLOAD"></string>
+    <string name="MAX_RESULTS">30</string>
+
+
+
+    <!--
+
+     final String OPERATION_NAME="getMostWatchedItems";
+    final String SERVICE_NAME="MerchandisingService";
+    final String SERVICE_VERSION="1.0.0";
+    final String CONSUMER_ID="MAC-dea-PRD-33890c490-ca2c0396";
+    final String RESPONSE_DATA_FORMAT="JSON";
+    final String REST_PAYLOAD = "";
+    final String MAX_RESULTS="30";
+    final String KEYWORDS="SAMSUNG";
+
+
+
+    -->
+
+
+    <!--
+
+
+    final String ab = "http://svcs.ebay.com/";
+    final String OPERATION_NAME="findItemsByKeywords";
+    final String SERVICE_VERSION="1.0.0";
+    final String SECURITY_APPNAME="MAC-dea-PRD-33890c490-ca2c0396";
+    final String GLOBAL_ID="EBAY-US";
+    final String RESPONSE_DATA_FORMAT="JSON";
+    // final String callback="cb_findItemsByKeywords";
+    final String REST_PAYLOAD = "";
+    final String entriesPerPage="5";
+    final String keywords="NIRVANA";
+
+
+
+    -->
 
 
 </resources>

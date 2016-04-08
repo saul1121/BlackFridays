@@ -1,6 +1,5 @@
 package deals.mac.com.blackfridays.fragment;
 
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,13 +1,12 @@
 
-package deals.mac.com.blackfridays.restentity.ebay;
+package deals.mac.com.blackfridays.restentity.ebaydeals;
 
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-
-public class ShippingServiceCost {
+public class BuyItNowPrice {
 
     @SerializedName("@currencyId")
     @Expose

@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-
-
 import android.content.res.Configuration;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,32 +14,35 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.ShareActionProvider;
 
 import deals.mac.com.blackfridays.fragment.AmazonDealsFragment;
-import deals.mac.com.blackfridays.fragment.EbayDealsFragment;
-
-import deals.mac.com.blackfridays.fragment.MainEmptyFragment;
+import deals.mac.com.blackfridays.fragment.BestBuyDealsFragment;
+import deals.mac.com.blackfridays.fragment.EbayFragment;
 import deals.mac.com.blackfridays.fragment.TopFragment;
+import deals.mac.com.blackfridays.fragment.WalmartDealsFragments;
+
 
 public class MainActivity extends Activity {
 
 
-    private ShareActionProvider shareActionProvider;
     private ListView drawerList;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private int currentPosition = 0;
     private String[] deals_stores;
-    final public static String FRAGMENT_ID="COMPONENT_FRAGMENT";
+    final public static String FRAGMENT_ID = "visible_fragment";
+    private String querySearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         deals_stores = getResources().getStringArray(R.array.deals_stores);
-        drawerList = (ListView)findViewById(R.id.drawer);
+        drawerList = (ListView) findViewById(R.id.drawer);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
 
         drawerList.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_activated_1, deals_stores));
@@ -63,6 +63,7 @@ public class MainActivity extends Activity {
                 super.onDrawerClosed(view);
                 invalidateOptionsMenu();
             }
+
             //Called when a drawer has settled in a completely open state.
             @Override
             public void onDrawerOpened(View drawerView) {
@@ -70,28 +71,33 @@ public class MainActivity extends Activity {
                 invalidateOptionsMenu();
             }
         };
-        //drawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.setDrawerListener(drawerToggle);
 
-        drawerLayout.addDrawerListener(drawerToggle);
+        //drawerLayout.addDrawerListener(drawerToggle);
 
         setUpActionBar();
     }
-
 
 
     private void selectItem(int position) {
 
         currentPosition = position;
         Fragment fragment;
-        switch(position) {
+        switch (position) {
             case 1:
-                fragment = new EbayDealsFragment();
+                fragment = new EbayFragment();
                 break;
             case 2:
-                fragment = new AmazonDealsFragment();
+                fragment = new AmazonDealsFragment();   // new EbayDealsFragment();
+                break;
+            case 3:
+                fragment = new BestBuyDealsFragment();
+                break;
+            case 4:
+                fragment = new WalmartDealsFragments();
                 break;
             default:
-                fragment = new MainEmptyFragment();
+                fragment = new TopFragment();
         }
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.content_frame, fragment, FRAGMENT_ID);
@@ -132,19 +138,21 @@ public class MainActivity extends Activity {
     }
 
     private void setActionBarTitle(int position) {
-        String title="Your BlackFriday App";
+        String title = "Your BlackFriday App";
         if (position == 0) {
             title = getResources().getString(R.string.app_name);
         } else {
             title = deals_stores[position];
         }
         getActionBar().setTitle(title);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -155,7 +163,7 @@ public class MainActivity extends Activity {
             return true;
         }
         switch (item.getItemId()) {
-           case R.id.action_settings:
+            case R.id.action_settings:
 
                 return true;
             default:
@@ -171,7 +179,7 @@ public class MainActivity extends Activity {
     }
 
 
-    public void setUpActionBar(){
+    public void setUpActionBar() {
 
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -185,14 +193,17 @@ public class MainActivity extends Activity {
                         if (fragment instanceof TopFragment) {
                             currentPosition = 0;
                         }
-                        if (fragment instanceof MainEmptyFragment) {
-                            currentPosition = 0;
-                        }
-                        if (fragment instanceof EbayDealsFragment) {
+                        if (fragment instanceof EbayFragment) {
                             currentPosition = 1;
                         }
                         if (fragment instanceof AmazonDealsFragment) {
                             currentPosition = 2;
+                        }
+                        if (fragment instanceof BestBuyDealsFragment) {
+                            currentPosition = 3;
+                        }
+                        if (fragment instanceof WalmartDealsFragments) {
+                            currentPosition = 0;
                         }
                         setActionBarTitle(currentPosition);
                         drawerList.setItemChecked(currentPosition, true);

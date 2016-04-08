@@ -7,6 +7,7 @@ import java.util.List;
 
 import deals.mac.com.blackfridays.restentity.ebay.EntityEbay;
 import deals.mac.com.blackfridays.restentity.ebay.FindItemsByKeywordsResponse;
+import deals.mac.com.blackfridays.restentity.ebay.Item;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -71,6 +72,16 @@ public class EbayServiceCall implements Callback<EntityEbay>{
     public void onResponse(Call<EntityEbay> call, Response<EntityEbay> response) {
 
      List<FindItemsByKeywordsResponse> allList=   response.body().getFindItemsByKeywordsResponse();
+    List<Item> results = allList.get(0).getSearchResult().get(0).getItem();
+        Item it = results.get(0);
+        it.getViewItemURL().get(0);
+        it.getTitle().get(0);
+        it.getGalleryURL().get(0);
+        it.getViewItemURL().get(0);
+        it.getSellingStatus().get(0).getCurrentPrice().get(0).getValue();
+        it.getSellingStatus().get(0).getCurrentPrice().get(0).getCurrencyId();
+        it.getCondition().get(0).getConditionDisplayName();
+
 
         if(allList!=null){
             System.out.println("size >>>>>>> "+ allList.size());
@@ -95,13 +106,10 @@ public class EbayServiceCall implements Callback<EntityEbay>{
                             @Override
                             public okhttp3.Response intercept(Chain chain) throws IOException {
                                 Request original = chain.request();
-
-
                                 Request.Builder requestBuilder = original.newBuilder()
                                         .method(original.method(), original.body());
 
                                 Request request = requestBuilder.build();
-
                                 okhttp3.Response res  = chain.proceed(request);
                                 System.out.println("orignal message >>>"+res.message());
                                 System.out.println("is succesfull >>>"+res.isSuccessful());

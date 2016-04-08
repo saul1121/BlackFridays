@@ -8,6 +8,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
+
 public class Item {
 
     @SerializedName("itemId")
@@ -19,9 +20,6 @@ public class Item {
     @SerializedName("globalId")
     @Expose
     private List<String> globalId = new ArrayList<String>();
-    @SerializedName("subtitle")
-    @Expose
-    private List<String> subtitle = new ArrayList<String>();
     @SerializedName("primaryCategory")
     @Expose
     private List<PrimaryCategory> primaryCategory = new ArrayList<PrimaryCategory>();
@@ -40,9 +38,6 @@ public class Item {
     @SerializedName("autoPay")
     @Expose
     private List<String> autoPay = new ArrayList<String>();
-    @SerializedName("postalCode")
-    @Expose
-    private List<String> postalCode = new ArrayList<String>();
     @SerializedName("location")
     @Expose
     private List<String> location = new ArrayList<String>();
@@ -61,9 +56,6 @@ public class Item {
     @SerializedName("returnsAccepted")
     @Expose
     private List<String> returnsAccepted = new ArrayList<String>();
-    @SerializedName("galleryPlusPictureURL")
-    @Expose
-    private List<String> galleryPlusPictureURL = new ArrayList<String>();
     @SerializedName("condition")
     @Expose
     private List<Condition> condition = new ArrayList<Condition>();
@@ -73,6 +65,9 @@ public class Item {
     @SerializedName("topRatedListing")
     @Expose
     private List<String> topRatedListing = new ArrayList<String>();
+    @SerializedName("postalCode")
+    @Expose
+    private List<String> postalCode = new ArrayList<String>();
 
     /**
      * 
@@ -126,24 +121,6 @@ public class Item {
      */
     public void setGlobalId(List<String> globalId) {
         this.globalId = globalId;
-    }
-
-    /**
-     * 
-     * @return
-     *     The subtitle
-     */
-    public List<String> getSubtitle() {
-        return subtitle;
-    }
-
-    /**
-     * 
-     * @param subtitle
-     *     The subtitle
-     */
-    public void setSubtitle(List<String> subtitle) {
-        this.subtitle = subtitle;
     }
 
     /**
@@ -257,24 +234,6 @@ public class Item {
     /**
      * 
      * @return
-     *     The postalCode
-     */
-    public List<String> getPostalCode() {
-        return postalCode;
-    }
-
-    /**
-     * 
-     * @param postalCode
-     *     The postalCode
-     */
-    public void setPostalCode(List<String> postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    /**
-     * 
-     * @return
      *     The location
      */
     public List<String> getLocation() {
@@ -383,24 +342,6 @@ public class Item {
     /**
      * 
      * @return
-     *     The galleryPlusPictureURL
-     */
-    public List<String> getGalleryPlusPictureURL() {
-        return galleryPlusPictureURL;
-    }
-
-    /**
-     * 
-     * @param galleryPlusPictureURL
-     *     The galleryPlusPictureURL
-     */
-    public void setGalleryPlusPictureURL(List<String> galleryPlusPictureURL) {
-        this.galleryPlusPictureURL = galleryPlusPictureURL;
-    }
-
-    /**
-     * 
-     * @return
      *     The condition
      */
     public List<Condition> getCondition() {
@@ -450,6 +391,24 @@ public class Item {
      */
     public void setTopRatedListing(List<String> topRatedListing) {
         this.topRatedListing = topRatedListing;
+    }
+
+    /**
+     * 
+     * @return
+     *     The postalCode
+     */
+    public List<String> getPostalCode() {
+        return postalCode;
+    }
+
+    /**
+     * 
+     * @param postalCode
+     *     The postalCode
+     */
+    public void setPostalCode(List<String> postalCode) {
+        this.postalCode = postalCode;
     }
 
 }
